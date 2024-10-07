@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+$-bg-color: #08070B;
+$-container-color: #24232C;
+$-font-family: "JetBrains Mono", monospace;
+$-title-color: #817D92;
+
+@mixin setBackground($color) {
+    background-color: $color;
+}
+@mixin setColor($color){
+    color: $color;
+}
+@mixin centerDiv(){
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap:10px;
+}
+body {
+    font-family: $-font-family;
+    @include centerDiv();
+    @include setBackground($-bg-color);
+}
+.title-container{
+    .title{
+        @include setColor($-title-color)
+    }
+}
+%background-class{
+    @include setBackground($-container-color)
+}
+.password-container{
+    width: 30%;
+    height: 80px;
+    @extend %background-class;
+}
+.options-container{
+    width: 30%;
+    height: 528px;
+    @extend %background-class;
+}

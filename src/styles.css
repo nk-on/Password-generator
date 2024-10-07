@@ -1,33 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-:root{
-    --bg-clr:#08070B;
-    --clr-gray: #817D92;
-    --dark-gray:#24232C;
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+body {
+  font-family: "JetBrains Mono", monospace;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #08070B; }
 
-}
-body{
-    font-family: "JetBrains Mono", monospace;
-    background-color: var(--bg-clr);
-    height: 100vh;
-}
-.title-container{
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.title{
-    color: var(--clr-gray);
-}
-header{
-    margin:0 auto;
-    width: 30%;
-    height: 80px;
-    background-color: var(--dark-gray);
-}
+.title-container .title {
+  color: #817D92; }
+
+.password-container, .options-container {
+  background-color: #24232C; }
+
+.password-container {
+  width: 30%;
+  height: 80px; }
+
+.options-container {
+  width: 30%;
+  height: 528px; }
+
+/*# sourceMappingURL=styles.css.map */
