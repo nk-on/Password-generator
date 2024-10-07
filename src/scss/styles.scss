@@ -3,7 +3,12 @@ $-bg-color: #08070B;
 $-container-color: #24232C;
 $-font-family: "JetBrains Mono", monospace;
 $-title-color: #817D92;
-
+$-almost-white:#E6E5EA;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 @mixin setBackground($color) {
     background-color: $color;
 }
@@ -30,9 +35,16 @@ body {
     @include setBackground($-container-color)
 }
 .password-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
     width: 30%;
     height: 80px;
     @extend %background-class;
+    .password{
+        @include setColor($-almost-white);
+    }
 }
 .options-container{
     width: 30%;

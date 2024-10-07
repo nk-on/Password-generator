@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 body {
   font-family: "JetBrains Mono", monospace;
   display: flex;
@@ -14,8 +19,14 @@ body {
   background-color: #24232C; }
 
 .password-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
   width: 30%;
   height: 80px; }
+  .password-container .password {
+    color: #E6E5EA; }
 
 .options-container {
   width: 30%;
