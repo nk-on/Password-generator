@@ -1,13 +1,27 @@
 @use 'header';
+$clr-green:#A4FFAF;
 .options-container{
     width: 30%;
     height: 528px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     @extend %background-class;
     .input-label{
-        padding: 10px 15px;
+        width: 100%;
+        padding: 10px 30px;
         @include header.centerDiv();
         .Characters-length-title{
             @include header.setColor(header.$almost-white);
         }
+        .Characters-length{
+            font-weight: 800;
+            font-size: 32px;
+            @include header.setColor($clr-green);
+        }
+    };
+    #input-range{
+        accent-color: $clr-green;
+        width: 95%;
     }
 }
