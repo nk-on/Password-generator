@@ -2,7 +2,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body {
   font-family: "JetBrains Mono", monospace;
@@ -10,13 +11,16 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  background-color: #08070B; }
+  background-color: #08070B;
+}
 
 .title-container .title {
-  color: #817D92; }
+  color: #817D92;
+}
 
-.password-container, .options-container {
-  background-color: #24232C; }
+.options-container, .password-container {
+  background-color: #24232C;
+}
 
 .password-container {
   display: flex;
@@ -24,12 +28,24 @@ body {
   align-items: center;
   padding: 0 30px;
   width: 30%;
-  height: 80px; }
-  .password-container .password {
-    color: #E6E5EA; }
+  height: 80px;
+}
+.password-container .password {
+  color: #E6E5EA;
+}
 
 .options-container {
   width: 30%;
-  height: 528px; }
+  height: 528px;
+}
+.options-container .input-label {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.options-container .input-label .Characters-length-title {
+  color: #E6E5EA;
+}
 
 /*# sourceMappingURL=styles.css.map */

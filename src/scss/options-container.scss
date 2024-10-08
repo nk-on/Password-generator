@@ -1,0 +1,13 @@
+@use 'header';
+.options-container{
+    width: 30%;
+    height: 528px;
+    @extend %background-class;
+    .input-label{
+        padding: 10px 15px;
+        @include header.centerDiv();
+        .Characters-length-title{
+            @include header.setColor(header.$almost-white);
+        }
+    }
+}
