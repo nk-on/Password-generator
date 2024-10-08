@@ -37,8 +37,10 @@ body {
 .options-container {
   width: 30%;
   height: 528px;
+  padding: 0 20px;
   display: flex;
-  align-items: center;
+  gap: 30px;
+  align-items: flex-start;
   flex-direction: column;
 }
 .options-container .input-label {
@@ -52,13 +54,18 @@ body {
   color: #E6E5EA;
 }
 .options-container .input-label .Characters-length {
-  font-weight: 800;
   font-size: 32px;
   color: #A4FFAF;
 }
 .options-container #input-range {
   accent-color: #A4FFAF;
   width: 95%;
+}
+.options-container .password-content-options {
+  display: grid;
+  gap: 10px;
+  color: #E6E5EA;
+  font-weight: 800;
 }
 
 /*# sourceMappingURL=styles.css.map */

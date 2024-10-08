@@ -1,10 +1,15 @@
 @use 'header';
 $clr-green:#A4FFAF;
+@mixin setFontWeight(){
+    font-weight: 800;
+}
 .options-container{
     width: 30%;
     height: 528px;
+    padding: 0 20px;
     display: flex;
-    align-items: center;
+    gap:30px;
+    align-items: flex-start;
     flex-direction: column;
     @extend %background-class;
     .input-label{
@@ -15,7 +20,6 @@ $clr-green:#A4FFAF;
             @include header.setColor(header.$almost-white);
         }
         .Characters-length{
-            font-weight: 800;
             font-size: 32px;
             @include header.setColor($clr-green);
         }
@@ -23,5 +27,11 @@ $clr-green:#A4FFAF;
     #input-range{
         accent-color: $clr-green;
         width: 95%;
+    }
+    .password-content-options{
+        display: grid;
+        gap:10px;
+        @include header.setColor(header.$almost-white);
+        @include setFontWeight();
     }
 }
