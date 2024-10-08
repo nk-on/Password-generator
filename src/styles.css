@@ -37,15 +37,28 @@ body {
 .options-container {
   width: 30%;
   height: 528px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .options-container .input-label {
-  padding: 10px 15px;
+  width: 100%;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .options-container .input-label .Characters-length-title {
   color: #E6E5EA;
+}
+.options-container .input-label .Characters-length {
+  font-weight: 800;
+  font-size: 32px;
+  color: #A4FFAF;
+}
+.options-container #input-range {
+  accent-color: #A4FFAF;
+  width: 95%;
 }
 
 /*# sourceMappingURL=styles.css.map */
