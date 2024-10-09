@@ -67,5 +67,18 @@ body {
   color: #E6E5EA;
   font-weight: 800;
 }
+.options-container .password-strength-option {
+  margin-left: 2.5%;
+  width: 95%;
+  height: 15%;
+  padding: 5px 15px;
+  background-color: #08070B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.options-container .password-strength-option h2 {
+  color: #817D92;
+}
 
 /*# sourceMappingURL=styles.css.map */

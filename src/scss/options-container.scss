@@ -1,5 +1,6 @@
 @use 'header';
 $clr-green:#A4FFAF;
+$clr-title:#817D92;
 @mixin setFontWeight(){
     font-weight: 800;
 }
@@ -33,5 +34,16 @@ $clr-green:#A4FFAF;
         gap:10px;
         @include header.setColor(header.$almost-white);
         @include setFontWeight();
+    }
+    .password-strength-option{
+        margin-left: 2.5%;
+        width: 95%;
+        height: 15%;
+        padding: 5px 15px;
+        @include header.setBackground(header.$bg-color);
+        @include header.centerDiv();
+        h2{
+            @include header.setColor($clr-title);
+        }
     }
 }
