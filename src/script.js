@@ -3,8 +3,13 @@
 //if user has not checked any option display error
 //app should be able to determine passowrd stregth
 const clipBoardIcon = document.querySelector('.icon');
-const characterLength = document.querySelector('.Characters-length');
+const characterLengthContainer = document.querySelector('.Characters-length');
 const inputRange = document.querySelector('#input-range')
 const checkBoxes = document.querySelectorAll('#checkBox');
 const levelIndicators = document.querySelectorAll('.level');
 const generateButton = document.querySelector('.generate-button');
+function detectPasswordLength(){
+    characterLengthContainer.textContent = inputRange.value;
+};
+inputRange.addEventListener('change',detectPasswordLength);
+detectPasswordLength();
