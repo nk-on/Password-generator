@@ -35,6 +35,9 @@ body {
 .password-container .password {
   color: #E6E5EA;
 }
+.password-container svg {
+  cursor: pointer;
+}
 
 .options-container {
   width: 30%;
@@ -103,24 +106,28 @@ body {
 }
 
 .level:nth-child(4n+1) {
+  cursor: pointer;
   border: 1px solid #E6E5EA;
   width: 10px;
   height: 28px;
 }
 
 .level:nth-child(4n+2) {
+  cursor: pointer;
   border: 1px solid #E6E5EA;
   width: 10px;
   height: 28px;
 }
 
 .level:nth-child(4n+3) {
+  cursor: pointer;
   border: 1px solid #E6E5EA;
   width: 10px;
   height: 28px;
 }
 
 .level:nth-child(4n+4) {
+  cursor: pointer;
   border: 1px solid #E6E5EA;
   width: 10px;
   height: 28px;

@@ -66,6 +66,7 @@ $clr-darkGray:#24232C;
 }
 @for $i from 1 through 4{
     .level:nth-child(4n+ #{$i}){
+        cursor: pointer;
         border: 1px solid header.$almost-white;
         width: 10px;
         height: 28px;

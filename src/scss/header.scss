@@ -50,4 +50,7 @@ body {
     .password{
         @include setColor($almost-white);
     }
+    svg{
+        cursor: pointer;
+    }
 }
