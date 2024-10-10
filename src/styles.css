@@ -90,4 +90,35 @@ body {
   background-color: #A4FFAF;
 }
 
+.strength-levels {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.level:nth-child(4n+1) {
+  border: 1px solid #E6E5EA;
+  width: 10px;
+  height: 28px;
+}
+
+.level:nth-child(4n+2) {
+  border: 1px solid #E6E5EA;
+  width: 10px;
+  height: 28px;
+}
+
+.level:nth-child(4n+3) {
+  border: 1px solid #E6E5EA;
+  width: 10px;
+  height: 28px;
+}
+
+.level:nth-child(4n+4) {
+  border: 1px solid #E6E5EA;
+  width: 10px;
+  height: 28px;
+}
+
 /*# sourceMappingURL=styles.css.map */

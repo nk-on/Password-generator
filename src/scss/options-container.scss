@@ -54,3 +54,14 @@ $clr-title:#817D92;
         @include header.setBackground($clr-green);
     }
 }
+.strength-levels{
+    width: 10%;
+    @include header.centerDiv();
+}
+@for $i from 1 through 4{
+    .level:nth-child(4n+ #{$i}){
+        border: 1px solid header.$almost-white;
+        width: 10px;
+        height: 28px;
+    }
+}
