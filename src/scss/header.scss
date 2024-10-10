@@ -17,6 +17,7 @@ $almost-white:#E6E5EA;
 }
 @mixin centerContainers(){
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap:10px;
@@ -27,6 +28,7 @@ $almost-white:#E6E5EA;
     align-items: center;
 }
 body {
+    height: 100vh;
     font-family: $font-family;
     @include centerContainers();
     @include setBackground($bg-color);

@@ -6,8 +6,10 @@
 }
 
 body {
+  height: 100vh;
   font-family: "JetBrains Mono", monospace;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 10px;
@@ -79,6 +81,13 @@ body {
 }
 .options-container .password-strength-option h2 {
   color: #817D92;
+}
+.options-container .generate-button {
+  margin-left: 2.5%;
+  width: 95%;
+  height: 15%;
+  padding: 5px 15px;
+  background-color: #A4FFAF;
 }
 
 /*# sourceMappingURL=styles.css.map */

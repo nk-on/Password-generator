@@ -4,6 +4,12 @@ $clr-title:#817D92;
 @mixin setFontWeight(){
     font-weight: 800;
 }
+@mixin setDimensions(){
+    margin-left: 2.5%;
+    width: 95%;
+    height: 15%;
+    padding: 5px 15px;
+}
 .options-container{
     width: 30%;
     height: 528px;
@@ -36,14 +42,15 @@ $clr-title:#817D92;
         @include setFontWeight();
     }
     .password-strength-option{
-        margin-left: 2.5%;
-        width: 95%;
-        height: 15%;
-        padding: 5px 15px;
+        @include setDimensions();
         @include header.setBackground(header.$bg-color);
         @include header.centerDiv();
         h2{
             @include header.setColor($clr-title);
         }
+    }
+    .generate-button{
+        @include setDimensions();
+        @include header.setBackground($clr-green);
     }
 }
