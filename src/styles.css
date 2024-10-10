@@ -83,11 +83,16 @@ body {
   color: #817D92;
 }
 .options-container .generate-button {
+  cursor: pointer;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+  font-size: 18px;
   margin-left: 2.5%;
   width: 95%;
   height: 15%;
   padding: 5px 15px;
   background-color: #A4FFAF;
+  color: #24232C;
 }
 
 .strength-levels {

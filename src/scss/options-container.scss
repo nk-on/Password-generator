@@ -1,6 +1,7 @@
 @use 'header';
 $clr-green:#A4FFAF;
 $clr-title:#817D92;
+$clr-darkGray:#24232C;
 @mixin setFontWeight(){
     font-weight: 800;
 }
@@ -50,8 +51,13 @@ $clr-title:#817D92;
         }
     }
     .generate-button{
+        cursor: pointer;
+        font-family: header.$font-family;
+        font-weight: 800;
+        font-size: 18px;
         @include setDimensions();
         @include header.setBackground($clr-green);
+        @include header.setColor($clr-darkGray);
     }
 }
 .strength-levels{
