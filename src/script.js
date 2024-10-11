@@ -29,21 +29,22 @@ function generatePassword(){
     //generate initial password based on checkbox statuses 
     //add random symbols till password reaches passwordLength
     //link checked checkboxed to sets defined in initial variables then construct central variable from which will be consturcted passwrod
-    let passowrd = '';
-    const activeCheckBoxes = [];
+    let password = '';
+    const chosenPasswordMaterials = []
     checkBoxes.forEach((checkBox)=>{
-        if(checkBox.checked) activeCheckBoxes.push(checkBox.dataset.checkboxtype);
+        if(checkBox.checked) chosenPasswordMaterials.push(passwordMaterials[checkBox.dataset.checkboxtype]);
     });
-    for(let i = 0; i < activeCheckBoxes.length; i++){
-        const checkBox = activeCheckBoxes[i];
-        const array = new Uint8Array(activeCheckBoxes);  
+    console.log(chosenPasswordMaterials)
+    for(let i = 0; i < chosenPasswordMaterials.length; i++){
+        const array = new Uint8Array(chosenPasswordMaterials.length);  
         const randomValues = crypto.getRandomValues(array);
         const randomValue = randomValues[0] / 255;
         const randomIndex =  Math.floor(randomValue * (passwordLength - 1 + 1) + 1);
-        const passwordMaterialsArray = passwordMaterials[checkBox];
-        passowrd+=passwordMaterialsArray[randomIndex]
+        const passwordMaterialSet = chosenPasswordMaterials[i];
+        password+=passwordMaterialSet[randomIndex]
     }
-    return passowrd;
+    console.log(password)
+    return password
 }
 inputRange.addEventListener('change',detectPasswordLength);
 generateButton.addEventListener('click',generatePassword)
