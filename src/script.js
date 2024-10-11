@@ -8,6 +8,10 @@ const inputRange = document.querySelector('#input-range')
 const checkBoxes = document.querySelectorAll('#checkBox');
 const levelIndicators = document.querySelectorAll('.level');
 const generateButton = document.querySelector('.generate-button');
+const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const numbers = '0123456789'.split('');
+const symbols = '!@#$%^&*()_+[]{}|;:,.<>?'.split('');
 function detectPasswordLength(){
     characterLengthContainer.textContent = inputRange.value;
 };
