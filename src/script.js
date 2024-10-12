@@ -50,7 +50,7 @@ function generatePassword() {
     const passwordCharactersSet = chosenCharacters[randomCharacterIndex];
     console.log(randomCharacterIndex)
 
-    const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-2) - 1 + 1) + 1);
+    const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-1) - 0 + 1) + 0);
     password += passwordCharactersSet[randomIndex];
   }
   console.log(password)
