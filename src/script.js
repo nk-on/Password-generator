@@ -14,7 +14,7 @@ let passwordLength = undefined;
 // const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 // const numbers = '0123456789'.split('');
 // const symbols = '!@#$%^&*()_+[]{}|;:,.<>?'.split('');
-const passwordMaterials = {
+const passwordCharacters = {
   uppercase: 'abcdefghijklmnopqrstuvwxyz'.split(''),
   lowercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
   numbers: '0123456789'.split(''),
@@ -31,24 +31,24 @@ function generatePassword() {
   //link checked checkboxed to sets defined in initial variables then construct central variable from which will be consturcted passwrod
  
   let password = '';
-  const chosenPasswordMaterials = [];
+  const chosenCharacters = [];
   checkBoxes.forEach((checkBox) => {
     if (checkBox.checked)
-      chosenPasswordMaterials.push(
-        passwordMaterials[checkBox.dataset.checkboxtype]
+      chosenCharacters.push(
+        passwordCharacters[checkBox.dataset.checkboxtype]
       );
   });
-  if (chosenPasswordMaterials.length === 0) {
+  if (chosenCharacters.length === 0) {
     alert('Include at least one character set');
     return;
   }
-  for (let i = 0; i < chosenPasswordMaterials.length; i++) {
-    const array = new Uint8Array(chosenPasswordMaterials.length);
+  for (let i = 0; i < chosenCharacters.length; i++) {
+    const array = new Uint8Array(chosenCharacters.length);
     const randomValues = crypto.getRandomValues(array);
     const randomValue = randomValues[0] / 255;
-    const passwordMaterialSet = chosenPasswordMaterials[i];
+    const passwordMaterialSet = chosenCharacters[i];
     const randomIndex = Math.floor(randomValue * ((passwordMaterialSet.length-2) - 1 + 1) + 1);
-    console.log(passwordMaterialSet,randomIndex)
+    console.log(chosenCharacters,randomIndex)
     password += passwordMaterialSet[randomIndex];
   }
   console.log(password)
