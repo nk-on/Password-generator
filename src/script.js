@@ -29,12 +29,11 @@ function generatePassword() {
   //generate initial password based on checkbox statuses
   //add random symbols till password reaches passwordLength
   //link checked checkboxed to sets defined in initial variables then construct central variable from which will be consturcted passwrod
-  function getRandomCharacters(){
+  function getRandomCharacters(idx){
     const array = new Uint8Array(chosenCharacters.length);
     const randomValues = crypto.getRandomValues(array);
     const randomValue = randomValues[0] / 255;
-    const randomCharacterIndex = Math.floor(randomValue * ((chosenCharacters.length-1) - 0 + 1) + 0);
-    const passwordCharactersSet = chosenCharacters[randomCharacterIndex];
+    const passwordCharactersSet = chosenCharacters[idx];
     const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-1) - 0 + 1) + 0);
     password += passwordCharactersSet[randomIndex];
   }
@@ -51,12 +50,7 @@ function generatePassword() {
     return;
   }
   for (let i = 0; i < chosenCharacters.length; i++) {
-    const array = new Uint8Array(chosenCharacters.length);
-    const randomValues = crypto.getRandomValues(array);
-    const randomValue = randomValues[0] / 255;
-    const passwordCharactersSet = chosenCharacters[i];
-    const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-1) - 0 + 1) + 0);
-    password += passwordCharactersSet[randomIndex];
+    getRandomCharacters(i);
   }
   password = _.shuffle(password.split('')).join('')
   console.log(password)
