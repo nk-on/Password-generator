@@ -10,6 +10,8 @@ const checkBoxes = document.querySelectorAll('#checkBox');
 const levelIndicators = document.querySelectorAll('.level');
 const generateButton = document.querySelector('.generate-button');
 let passwordLength = undefined;
+let password = '';
+const chosenCharacters = [];
 // const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 // const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 // const numbers = '0123456789'.split('');
@@ -24,21 +26,18 @@ function detectPasswordLength() {
   characterLengthContainer.textContent = inputRange.value;
   passwordLength = Number(inputRange.value);
 }
-
+function getRandomCharacters(idx){
+  const array = new Uint8Array(chosenCharacters.length);
+  const randomValues = crypto.getRandomValues(array);
+  const randomValue = randomValues[0] / 255;
+  const passwordCharactersSet = chosenCharacters[idx];
+  const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-1) - 0 + 1) + 0);
+  password += passwordCharactersSet[randomIndex];
+}
 function generatePassword() {
   //generate initial password based on checkbox statuses
   //add random symbols till password reaches passwordLength
   //link checked checkboxed to sets defined in initial variables then construct central variable from which will be consturcted passwrod
-  function getRandomCharacters(idx){
-    const array = new Uint8Array(chosenCharacters.length);
-    const randomValues = crypto.getRandomValues(array);
-    const randomValue = randomValues[0] / 255;
-    const passwordCharactersSet = chosenCharacters[idx];
-    const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-1) - 0 + 1) + 0);
-    password += passwordCharactersSet[randomIndex];
-  }
-  let password = '';
-  const chosenCharacters = [];
   checkBoxes.forEach((checkBox) => {
     if (checkBox.checked)
       chosenCharacters.push(
@@ -52,8 +51,15 @@ function generatePassword() {
   for (let i = 0; i < chosenCharacters.length; i++) {
     getRandomCharacters(i);
   }
-  password = _.shuffle(password.split('')).join('')
-  console.log(password)
+  for (let i = password.length; i < passwordLength; i++) {
+    const array = new Uint8Array(chosenCharacters.length);
+    const randomValues = crypto.getRandomValues(array);
+    const randomValue = randomValues[0] / 255;
+    const randomIndex = Math.floor(randomValue * ((chosenCharacters.length-1) - 0 + 1) + 0);
+    console.log(randomIndex)
+    getRandomCharacters(randomIndex);
+  }
+  password = _.shuffle(password.split('')).join('');
   return password;
 }
 inputRange.addEventListener('change', detectPasswordLength);
