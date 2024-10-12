@@ -46,10 +46,12 @@ function generatePassword() {
     const array = new Uint8Array(chosenCharacters.length);
     const randomValues = crypto.getRandomValues(array);
     const randomValue = randomValues[0] / 255;
-    const passwordMaterialSet = chosenCharacters[i];
-    const randomIndex = Math.floor(randomValue * ((passwordMaterialSet.length-2) - 1 + 1) + 1);
-    console.log(chosenCharacters,randomIndex)
-    password += passwordMaterialSet[randomIndex];
+    const randomCharacterIndex = Math.floor(randomValue * ((chosenCharacters.length-1) - 0 + 1) + 0);
+    const passwordCharactersSet = chosenCharacters[randomCharacterIndex];
+    console.log(randomCharacterIndex)
+
+    const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-2) - 1 + 1) + 1);
+    password += passwordCharactersSet[randomIndex];
   }
   console.log(password)
   return password;
