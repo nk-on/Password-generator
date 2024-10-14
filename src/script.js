@@ -39,6 +39,9 @@ function getRandomCharacters(idx){
 function displayPassWord(){
   passwordContainer.textContent = password;
 }
+function copyText(){
+  navigator.clipboard.writeText(passwordContainer.textContent);
+}
 function generatePassword() {
   //generate initial password based on checkbox statuses
   //add random symbols till password reaches passwordLength
@@ -68,6 +71,7 @@ function generatePassword() {
   password = _.shuffle(password.split('')).join('');
   displayPassWord();
 }
+clipBoardIcon.addEventListener('click',copyText)
 inputRange.addEventListener('change', detectPasswordLength);
 generateButton.addEventListener('click', generatePassword);
 detectPasswordLength();
