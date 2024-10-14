@@ -2,6 +2,7 @@
 //character length should vary if user changes length variable
 //if user has not checked any option display error
 
+
 //app should be able to determine passowrd stregth
 const clipBoardIcon = document.querySelector('.icon');
 const characterLengthContainer = document.querySelector('.Characters-length');
@@ -32,7 +33,7 @@ function getRandomCharacters(idx){
   const randomValues = crypto.getRandomValues(array);
   const randomValue = randomValues[0] / 255;
   const passwordCharactersSet = chosenCharacters[idx];
-  const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-1) - 0 + 1) + 0);
+  const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-2) - 0 + 1) + 0);
   password += passwordCharactersSet[randomIndex];
 }
 function displayPassWord(){
@@ -61,7 +62,7 @@ function generatePassword() {
     const array = new Uint8Array(chosenCharacters.length);
     const randomValues = crypto.getRandomValues(array);
     const randomValue = randomValues[0] / 255;
-    const randomIndex = Math.floor(randomValue * ((chosenCharacters.length-1) - 0 + 1) + 0);
+    const randomIndex = Math.floor(randomValue * ((chosenCharacters.length-2) - 0 + 1) + 0);
     getRandomCharacters(randomIndex);
   }
   password = _.shuffle(password.split('')).join('');
