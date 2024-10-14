@@ -12,7 +12,7 @@ const levelIndicators = document.querySelectorAll('.level');
 const generateButton = document.querySelector('.generate-button');
 let passwordLength = undefined;
 let password = '';
-const chosenCharacters = [];
+let chosenCharacters = [];
 // const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 // const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 // const numbers = '0123456789'.split('');
@@ -43,6 +43,7 @@ function generatePassword() {
   //add random symbols till password reaches passwordLength
   //link checked checkboxed to sets defined in initial variables then construct central variable from which will be consturcted passwrod
   password = '';
+  chosenCharacters = [];
   checkBoxes.forEach((checkBox) => {
     if (checkBox.checked)
       chosenCharacters.push(
@@ -61,11 +62,9 @@ function generatePassword() {
     const randomValues = crypto.getRandomValues(array);
     const randomValue = randomValues[0] / 255;
     const randomIndex = Math.floor(randomValue * ((chosenCharacters.length-1) - 0 + 1) + 0);
-    console.log(randomIndex)
     getRandomCharacters(randomIndex);
   }
   password = _.shuffle(password.split('')).join('');
-  console.log(password,passwordLength)
   displayPassWord();
 }
 inputRange.addEventListener('change', detectPasswordLength);
