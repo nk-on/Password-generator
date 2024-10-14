@@ -5,6 +5,7 @@
 //app should be able to determine passowrd stregth
 const clipBoardIcon = document.querySelector('.icon');
 const characterLengthContainer = document.querySelector('.Characters-length');
+const passwordContainer = document.querySelector('.password');
 const inputRange = document.querySelector('#input-range');
 const checkBoxes = document.querySelectorAll('#checkBox');
 const levelIndicators = document.querySelectorAll('.level');
@@ -34,10 +35,14 @@ function getRandomCharacters(idx){
   const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-1) - 0 + 1) + 0);
   password += passwordCharactersSet[randomIndex];
 }
+function displayPassWord(){
+  passwordContainer.textContent = password;
+}
 function generatePassword() {
   //generate initial password based on checkbox statuses
   //add random symbols till password reaches passwordLength
   //link checked checkboxed to sets defined in initial variables then construct central variable from which will be consturcted passwrod
+  password = '';
   checkBoxes.forEach((checkBox) => {
     if (checkBox.checked)
       chosenCharacters.push(
@@ -60,7 +65,8 @@ function generatePassword() {
     getRandomCharacters(randomIndex);
   }
   password = _.shuffle(password.split('')).join('');
-  return password;
+  console.log(password,passwordLength)
+  displayPassWord();
 }
 inputRange.addEventListener('change', detectPasswordLength);
 generateButton.addEventListener('click', generatePassword);
