@@ -42,6 +42,27 @@ function displayPassWord(){
 function copyText(){
   navigator.clipboard.writeText(passwordContainer.textContent);
 }
+function colorizeLevelIndicators(levels,color){
+   for(let i = 0; i < levels; i++){
+     levelIndicators[i].style.backgroundColor = color;
+   }
+}
+function evaluateStrength(passwordStrength){
+  console.log(passwordStrength)
+  switch(passwordStrength){
+    case 0:
+      colorizeLevelIndicators(passwordStrength+1,'#F64A4A;');
+      break;
+    case 1:
+      colorizeLevelIndicators(passwordStrength+1,'#FB7C58');
+      break;
+    case 2:
+      colorizeLevelIndicators(passwordStrength+1,'#F8CD65');
+      break;
+    default:
+      colorizeLevelIndicators(levelIndicators.length,'#A4FFAF');
+  }
+}
 function generatePassword() {
   //generate initial password based on checkbox statuses
   //add random symbols till password reaches passwordLength
@@ -69,6 +90,8 @@ function generatePassword() {
     getRandomCharacters(randomIndex);
   }
   password = _.shuffle(password.split('')).join('');
+  const passwordStrength = zxcvbn(password).score;
+  evaluateStrength(passwordStrength);
   displayPassWord();
 }
 clipBoardIcon.addEventListener('click',copyText)
