@@ -1,7 +1,7 @@
 //app should generate random password when user clicks on generate button
 //character length should vary if user changes length variable
 //if user has not checked any option display error
-
+import evaluateStrength from "./levelindicators.js";
 
 //app should be able to determine passowrd stregth
 const clipBoardIcon = document.querySelector('.icon');
@@ -42,30 +42,6 @@ function displayPassWord(){
 function copyText(){
   navigator.clipboard.writeText(passwordContainer.textContent);
 }
-function colorizeLevelIndicators(levels,color){
-   for(let i = 0; i < levels; i++){
-     levelIndicators[i].style.backgroundColor = color;
-   }
-   for(let i = levels; i < levelIndicators.length; i++){
-    levelIndicators[i].style.backgroundColor = ' #08070B';
-   }
-}
-function evaluateStrength(passwordStrength){
-  console.log(passwordStrength)
-  switch(passwordStrength){
-    case 0:
-      colorizeLevelIndicators(passwordStrength+1,'#F64A4A;');
-      break;
-    case 1:
-      colorizeLevelIndicators(passwordStrength+1,'#FB7C58');
-      break;
-    case 2:
-      colorizeLevelIndicators(passwordStrength+1,'#F8CD65');
-      break;
-    default:
-      colorizeLevelIndicators(levelIndicators.length,'#A4FFAF');
-  }
-}
 function generatePassword() {
   //generate initial password based on checkbox statuses
   //add random symbols till password reaches passwordLength
@@ -101,3 +77,4 @@ clipBoardIcon.addEventListener('click',copyText)
 inputRange.addEventListener('change', detectPasswordLength);
 generateButton.addEventListener('click', generatePassword);
 detectPasswordLength();
+export default levelIndicators
