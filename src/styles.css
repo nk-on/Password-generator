@@ -99,7 +99,17 @@ body {
 }
 
 .strength-levels {
-  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 30%;
+}
+.strength-levels .level-indicator {
+  color: #E6E5EA;
+}
+.strength-levels .indicator-bars {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

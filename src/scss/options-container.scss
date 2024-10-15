@@ -61,8 +61,16 @@ $clr-darkGray:#24232C;
     }
 }
 .strength-levels{
-    width: 10%;
     @include header.centerDiv();
+    gap:10px;
+    width: 30%;
+    .level-indicator{
+        @include header.setColor(header.$almost-white)
+    }
+    .indicator-bars{
+        width: 100%;
+        @include header.centerDiv();
+    }
 }
 @for $i from 1 through 4{
     .level:nth-child(4n+ #{$i}){
