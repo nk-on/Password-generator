@@ -28,10 +28,14 @@ function detectPasswordLength() {
   characterLengthContainer.textContent = inputRange.value;
   passwordLength = Number(inputRange.value);
 }
-function getRandomCharacters(idx){
-  const array = new Uint8Array(chosenCharacters.length);
+function generateRandomValue(num){
+  const array = new Uint8Array(num);
   const randomValues = crypto.getRandomValues(array);
   const randomValue = randomValues[0] / 255;
+  return randomValue;
+}
+function getRandomCharacters(idx){
+  const randomValue = generateRandomValue(chosenCharacters.length);
   const passwordCharactersSet = chosenCharacters[idx];
   const randomIndex = Math.floor(randomValue * ((passwordCharactersSet.length-2) - 0 + 1) + 0);
   password += passwordCharactersSet[randomIndex];
@@ -62,9 +66,7 @@ function generatePassword() {
     getRandomCharacters(i);
   }
   for (let i = password.length; i < passwordLength; i++) {
-    const array = new Uint8Array(chosenCharacters.length);
-    const randomValues = crypto.getRandomValues(array);
-    const randomValue = randomValues[0] / 255;
+    const randomValue = generateRandomValue(chosenCharacters.length);
     const randomIndex = Math.floor(randomValue * ((chosenCharacters.length-2) - 0 + 1) + 0);
     getRandomCharacters(randomIndex);
   }
