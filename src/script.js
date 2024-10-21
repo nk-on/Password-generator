@@ -25,6 +25,7 @@ function generateRandomValue(num) {
   const randomValue = randomValues[0] / 255;
   return randomValue;
 }
+//Generating random character from choosen characters set
 function getRandomCharacters(idx) {
   const randomValue = generateRandomValue(chosenCharacters.length);
   const passwordCharactersSet = chosenCharacters[idx];
@@ -42,6 +43,7 @@ function copyText() {
 function generatePassword() {
   password = '';
   chosenCharacters = [];
+  //Generating array which will consist sets of characters  which user prefers password to consist of
   checkBoxes.forEach((checkBox) => {
     if (checkBox.checked)
       chosenCharacters.push(passwordCharacters[checkBox.dataset.checkboxtype]);
@@ -50,9 +52,11 @@ function generatePassword() {
     alert('Include at least one character set');
     return;
   }
+  //Generating initial password based on user's entered characters set ensuring that all user's prefered characters are inside password string
   for (let i = 0; i < chosenCharacters.length; i++) {
     getRandomCharacters(i);
   }
+  //Generating full Password based on compltly random characters
   for (let i = password.length; i < passwordLength; i++) {
     const randomValue = generateRandomValue(chosenCharacters.length);
     const randomIndex = Math.floor(

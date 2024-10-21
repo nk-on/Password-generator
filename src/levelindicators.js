@@ -11,7 +11,6 @@ function colorizeLevelIndicators(levels,color,level){
     for(let i = levels; i < levelIndicators.length; i++){
      levelIndicators[i].style.backgroundColor = ' #08070B';
     }
-    console.log(color,level)
     displayLevel(color,level);
  }
  function evaluateStrength(passwordStrength){
