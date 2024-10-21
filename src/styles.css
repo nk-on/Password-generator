@@ -39,6 +39,16 @@ body {
 .password-container svg {
   cursor: pointer;
 }
+.password-container .copy-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.password-container .copied-status-container {
+  color: #E6E5EA;
+  display: none;
+}
 
 .options-container {
   width: 30%;

@@ -6,6 +6,7 @@ const inputRange = document.querySelector('#input-range');
 const checkBoxes = document.querySelectorAll('#checkBox');
 const levelIndicators = document.querySelectorAll('.level');
 const generateButton = document.querySelector('.generate-button');
+const copiedStatus = document.querySelector('.copied-status-container')
 let passwordLength = undefined;
 let password = '';
 let chosenCharacters = [];
@@ -39,6 +40,7 @@ function displayPassWord() {
 }
 function copyText() {
   navigator.clipboard.writeText(passwordContainer.textContent);
+  copiedStatus.style.display = 'block';
 }
 function generatePassword() {
   password = '';

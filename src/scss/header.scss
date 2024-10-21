@@ -65,5 +65,13 @@ body {
     svg {
         cursor: pointer;
     }
+    .copy-status{
+        @include centerDiv();
+        gap:10px;
+    }
+    .copied-status-container{
+        @include setColor($almost-white);
+        display:none;
+    }
 }
 
