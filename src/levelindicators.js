@@ -14,7 +14,6 @@ function colorizeLevelIndicators(levels,color,level){
     displayLevel(color,level);
  }
  function evaluateStrength(passwordStrength){
-   console.log(passwordStrength)
    switch(passwordStrength){
      case 0:
        colorizeLevelIndicators(passwordStrength+1,'#F64A4A','Too weak');
