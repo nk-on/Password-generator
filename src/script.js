@@ -30,7 +30,7 @@ function getRandomCharacters(idx) {
   const randomValue = generateRandomValue(chosenCharacters.length);
   const passwordCharactersSet = chosenCharacters[idx];
   const randomIndex = Math.floor(
-    randomValue * (passwordCharactersSet.length - 2 - 0 + 1) + 0
+    randomValue * (passwordCharactersSet.length   - 1)
   );
   password += passwordCharactersSet[randomIndex];
 }
@@ -60,8 +60,9 @@ function generatePassword() {
   for (let i = password.length; i < passwordLength; i++) {
     const randomValue = generateRandomValue(chosenCharacters.length);
     const randomIndex = Math.floor(
-      randomValue * (chosenCharacters.length - 2 - 0 + 1) + 0
+      randomValue * (chosenCharacters.length - 1)
     );
+    console.log(randomIndex)
     getRandomCharacters(randomIndex);
   }
   password = _.shuffle(password.split('')).join('');
