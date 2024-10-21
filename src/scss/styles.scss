@@ -1,2 +1,7 @@
 @use 'header.scss';
 @use 'options-container.scss';
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 90%;
+    }
+}
